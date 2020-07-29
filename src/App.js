@@ -8,7 +8,7 @@ import './App.css';
 
 //REDUX
 import { Provider } from 'react-redux';
-import Store from './store';
+import store from './store';
 
 const App = () => {
     return (
