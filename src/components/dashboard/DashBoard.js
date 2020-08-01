@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import  {getCurrentProfile} from '../../actions/profile';
 
-const DashBoard = props => {
+const DashBoard = ({ getCurrentProfile, auth, profile }) => {
+    useEffect(() => {}, [])
+        getCurrentProfile();
     return (
         <div>
             the dasshbbord!
@@ -10,7 +14,14 @@ const DashBoard = props => {
 }
 
 DashBoard.propTypes = {
-
+    getCurrentProfile: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired,
+    profile: PropTypes.object.isRequired,
 }
 
-export default DashBoard;
+const mapStateToProps = state => ({
+    auth: state.state,
+    profile: state.profile
+})
+
+export default connect(mapStateToProps, { getCurrentProfile })(DashBoard);
