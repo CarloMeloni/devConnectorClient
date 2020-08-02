@@ -8,7 +8,7 @@ import Spinner from '../layout/Spinner';
 const DashBoard = ({ getCurrentProfile, auth: { user }, profile: { profile, loading } }) => {
     useEffect(() => {
         getCurrentProfile();
-    }, [])
+    }, [getCurrentProfile])
         
 
     return loading &&  profile === null 
@@ -20,13 +20,13 @@ const DashBoard = ({ getCurrentProfile, auth: { user }, profile: { profile, load
                 Welcome {user && user.name}
             </p>
             {profile !== null 
-                ? <Fragment>has</Fragment> 
-                : <Fragment>
+                ? (<Fragment>has</Fragment> )
+                : (<Fragment>
                     <p>You have no yet setup the profile, please add some info man!</p>
-                    <Link to='/create/profile' className='btn btn-primary my-1'>
+                    <Link to='/create-profile' className='btn btn-primary my-1'>
                         Create profile!
                     </Link>
-                </Fragment> }
+                </Fragment>) }
         </Fragment>
 }
 

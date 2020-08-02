@@ -15,15 +15,14 @@ export default function(state = initialState, action) {
         case GET_PROFILE: 
             return {
                 ...state,
-                profile: payload,
-                loading: false
+               // profile: payload,
             };
-
         case PROFILE_ERROR: 
             return {
                 ...state,
                 error: payload,
-                loading: false
+                loading: false,
+                profile: null
             };
 
         case CLEAR_PROFILE: 
