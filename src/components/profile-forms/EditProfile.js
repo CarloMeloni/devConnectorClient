@@ -23,7 +23,7 @@ const EditProfile = ({ profile: {profile, loading}, createProfile, getCurrentPro
     const [displaySocialInputs, toggleSocialInputs] = useState(false);
 
     useEffect(() => {
-            getCurrentProfile();
+           getCurrentProfile();
 
             setFormData({
                 company: loading || !profile.company ? '' : profile.company,
